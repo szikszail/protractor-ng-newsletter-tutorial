@@ -3,27 +3,45 @@ Feature: Basic Made with Angular page test
   I browse on the Made with Angular page
   So I can find interesting pages made with Angular
 
-  Scenario: 1. Checking the home page
+  Background:
     Given the Made with Angular page is opened
     Then the Made with Angular logo should be visible
-    And "<Category>" should be visible
-    And "<ImageNumberOnHomePage>" images should be shown
-    And SEE ALL icon should be (displayed|hidden)
 
-  Scenario: 2. Checking a category page
-    When "<Category>" name is clicked on
-    Then "<ImageNumber>" images should be shown
+  Scenario: 1. Checking the home page
+    Then Communication category should be visible
+    And 3 images should be shown for Communication category
+    And SEE ALL icon should be hidden for Communication category
+    And Productivity category should be visible
+    And 4 images should be shown for Productivity category
+    And SEE ALL icon should be displayed for Productivity category
 
-    When SEE ALL is clicked on
-    Then "<ImageNumber>" images should be shown
+  Scenario Outline: 2. Checking a category page
+   When Productivity category is clicked
+    Then 9 images should be shown for Productivity category
+    And Communication category should be hidden
+    And the following sites should be visible: <SiteNames>
 
-  Scenario: 3. Checking a page made with Angular
-    When "<PageMadeWithAngular>" is clicked on
-    Then "<PageMadeWithAngular>" is shown
-    And More sites made with Angular is shown
+    Examples:
+      |SiteNames    |
+      | Solar City  |
+      | Join.me     |
+      | Google Tips |
 
+    When Back button is clicked
+    And SEE ALL icon is clicked for Productivity category
+    Then 9 images should be shown for Productivity category
 
-  Example:
-  | Category      | ImageNumberOnHomePage | ImageNumber | PageMadeWithAngular   |
-  | Communication | 3                     | 3           | Maryland State Police |
-  | Productivity  | 4                     | 9           | Solar City            |
+    When Back button is clicked
+    And Communication category is clicked
+    Then 3 images should be shown for Communication category
+
+  Scenario Outline: 3. Checking a page made with Angular
+    When Communication category is clicked
+    And "<PageMadeWithAngular>" site is clicked
+    Then text "<PageMadeWithAngular>" should be shown
+    And text "More sites made with Angular" should be shown
+
+    Examples:
+      | PageMadeWithAngular   |
+      | Maryland State Police |
+      | GroupMe               |
