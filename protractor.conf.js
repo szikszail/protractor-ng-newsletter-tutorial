@@ -1,7 +1,8 @@
 exports.config = {
     specs: 'e2e/features/**/*.feature',
     capabilities: {
-        'browserName': 'chrome'
+        'browserName': 'chrome',
+        'name': 'Protractor Tutorial / Example'
     },
     // set to "custom" instead of cucumber.
     framework: 'custom',

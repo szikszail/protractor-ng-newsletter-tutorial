@@ -1,5 +1,3 @@
-# protractor-ng-newsletter-tutorial
+# protractor-tutorial
 
-This repository contains the solution of the ng-newsletter protractor tutorial.
-
-http://www.ng-newsletter.com/posts/practical-protractor.html
+This repository contains tasks for newbies with Protractor to learn it.
