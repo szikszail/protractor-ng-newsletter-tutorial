@@ -1,5 +1,5 @@
 {
-  "name": "protractor-ng-newsletter-tutorial",
+  "name": "protractor-tutorial",
   "version": "1.0.0",
   "description": "This repository contains the solution of the ng-newsletter protractor tutorial.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/szikszail/protractor-ng-newsletter-tutorial.git"
+    "url": "git+https://github.com/szikszail/protractor-tutorial.git"
   },
   "keywords": [
     "protractor",
@@ -18,9 +18,9 @@
   "author": "Laszlo Szikszai, Dora Vereb",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/szikszail/protractor-ng-newsletter-tutorial/issues"
+    "url": "https://github.com/szikszail/protractor-tutorial/issues"
   },
-  "homepage": "https://github.com/szikszail/protractor-ng-newsletter-tutorial#readme",
+  "homepage": "https://github.com/szikszail/protractor-tutorial#readme",
   "dependencies": {
     "chai": "^3.4.1",
     "chai-as-promised": "^5.1.0",
